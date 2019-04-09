@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(int errorCode, String errMsg) {
-                        Logger.i("得到错误："+errorCode+","+errMsg);
+                        Logger.i("得到的错误："+errorCode+","+errMsg);
                     }
                 });
 
