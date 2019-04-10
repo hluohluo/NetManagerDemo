@@ -26,6 +26,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
+
     implementation "io.reactivex.rxjava2:rxjava:2.1.0" // 必要rxjava2依赖
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1" // 必要rxandrroid依赖，切线程时需要用到
     implementation 'com.squareup.retrofit2:retrofit:2.3.0' // 必要retrofit依赖
@@ -37,4 +41,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
     implementation 'com.orhanobut:logger:2.1.1'
+
+    //运行时权限
+    implementation'pub.devrel:easypermissions:1.2.0'
 }

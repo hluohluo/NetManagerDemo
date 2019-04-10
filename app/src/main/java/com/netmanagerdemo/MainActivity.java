@@ -1,22 +1,18 @@
 package com.netmanagerdemo;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.netmanagerdemo.bean.Sutdent;
-import com.netmanagerdemo.net.ApiException;
 import com.netmanagerdemo.net.BaseObserver;
-import com.netmanagerdemo.net.BaseRequestBody;
-import com.netmanagerdemo.net.MainHandler;
-import com.netmanagerdemo.net.NetWorkManager;
 import com.netmanagerdemo.net.HttpStatus;
+import com.netmanagerdemo.net.NetWorkManager;
+import com.netmanagerdemo.net.model.StudentModel;
 import com.orhanobut.logger.Logger;
 
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,11 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getData() {
-        Map map = BaseRequestBody.getMap();
-        map.put("userId",123456);
-        NetWorkManager.getRequest().getStus(BaseRequestBody.createEncryptBody(map))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+        StudentModel studentModel = new StudentModel();
+        studentModel.getStudents()
                 .subscribe(new BaseObserver<List<Sutdent>>(){
                     @Override
                     public void onSuccess(List<Sutdent> result) {
